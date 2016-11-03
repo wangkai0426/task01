@@ -1,35 +1,27 @@
-<!DOCTYPE html>  
-<html>  
- <head>  
- <meta charset="utf-8">  
- <title></title>    
- <script type="text/javascript">  
-  function count(){  
-        var a = parseInt(document.getElementById("tex1").value);  
-        var b = parseInt(document.getElementById("tex2").value);  
-        var selectSign = document.getElementById("select").value;  
-  
-        switch (selectSign)  
-        {  
-        case '+': answer = a+b;break;  
-        case '-': answer = a-b;break;  
-        case '*': answer = a*b;break;  
-        case '/': answer = a/b;       
-        }  
-        document.getElementById("fruit").value = answer;  
-  }  
- </script>   
- </head>  
-<body>  
-  <input type="text" id="tex1" />  
-  <select id="select">  
-        <option value="+">+</option>  
-        <option value="-">-</option>  
-        <option value="*">*</option>  
-        <option value="/">/</option>  
-  </select>  
-  <input type="text" id="tex2" />  
-  <input type="button" value=" = " onclick="count()" />  
-  <input type="text" id="fruit" onclick="count()" />  
-</body>  
-</html> 
+<!DOCTYPE  HTML>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系好安全带,准备启航</title>
+
+<script type="text/javascript">
+
+  //通过javascript的日期对象来得到当前的日期，并输出。
+  var date=new Date();
+  var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+  var mydate=date.getDay();
+  document.write(date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDay()+"日"+weekday[mydate]);
+  //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+  var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+  var scoreArr =scoreStr.split("；");
+  //从数组中将成绩撮出来，然后求和取整，并输出。
+  for(i=0;i<scoreArr.length;i++){
+      sum+=scoreArr[i].slice(3,5);
+      }
+  var ave=parseInt(sum/scoreArr.length);
+  document.write("<br>"+"班级总成绩："+sum+"<br>"+"班级平均分："+ave);
+</script>
+</head>
+<body>
+</body>
+</html>
